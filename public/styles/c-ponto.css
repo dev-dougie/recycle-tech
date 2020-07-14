@@ -1,0 +1,147 @@
+body{background-color:white;}
+
+#page-cadastro-ponto{
+    width:90%;
+    max-width: 1440px;
+    /*box align outsite*/
+    margin:0 auto;
+
+}
+
+
+#page-cadastro-ponto header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top:20px;
+}
+
+ header a {
+    color: rgb(26, 26, 26);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#page-cadastro-ponto form{
+    border: 0.1px solid black;
+    border-radius: 7px;
+    padding: 64px;
+    margin:0 auto;
+    margin-top: 80px;
+    max-width: 730px;
+}
+
+form h1{font-size:30px;}
+
+form fieldset{
+    margin-top: 40px;
+    border: 0px;
+}
+
+form legend{
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    
+}
+
+form legend span{
+    color: gray;
+
+}
+
+form .field{
+    flex:1;
+    display: flex;
+    flex-direction: column; /*default: elements aside*/
+    margin-bottom: 24px;
+}
+
+form .field-group{
+    display:flex;
+}
+
+form .field-group2{
+    display:flex;
+}
+
+form input, form select{
+    background-color: rgb(230, 230, 230);
+    border: none;
+    padding: 16px 24px;
+    font-size: 18px;
+    border-radius: 8px;
+}
+
+form label{
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+form .field-group .field + .field{
+    margin-left: 10px;
+    max-width: 180px;
+}
+
+form .field-group2 .field + .field{
+    margin-left: 10px;
+}
+
+form button{
+    width: 250px;
+    height: 45px;
+    color: white;
+    background-color: orange;
+    font-size: 18px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: bold;
+    border:0;
+    margin-top: 40px;
+}
+
+form button:hover{
+    background-color:rgb(245, 185, 74);
+    transition-duration: 0.5s;
+}
+
+.items-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px
+}
+
+.items-grid li {
+    list-style-type: none;
+    background-color: rgb(147, 250, 143);
+    border-radius: 6px;
+    border:2px solid purple;
+    height: 180px;
+    padding: 32px 24px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    cursor:pointer;
+    font-weight: bold;
+}
+
+.items-grid li span{
+    flex:1;
+    display: flex;
+    align-items: center;
+    margin-top:12px;
+}
+
+.items-grid li.selected{
+    background: greenyellow;
+    border: 2px solid black;
+}
+
+.items-grid li image, .items-grid li  span{
+    pointer-events: none;
+}

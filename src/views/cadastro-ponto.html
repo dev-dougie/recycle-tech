@@ -1,0 +1,117 @@
+{% extends "layout.html" %}
+
+{% set pageId = "page-cadastro-ponto" %}
+
+{% block title %}
+    <title>Cadastro ponto de descarte</title>
+{% endblock title %}
+
+{% block styles %}
+    <link href='styles/c-ponto.css' rel="stylesheet" type="text/css">
+     <!--<link href='styles/modal.css' rel="stylesheet" type="text/css">-->
+{% endblock styles %}
+{% block content %}
+    <div id="">
+        {% include "partials/page-header.html"%}
+
+        <form action="/savepoint" method = "POST">
+            <h1>Cadastre um ponto de descarte</h1>
+
+            <fieldset>
+                <legend>
+                    <h2>Dados</h2>
+                </legend>
+                   <div class="field-group">
+                       <div class="field">
+                    <label for="name">Nome da coletora</label>
+                    <input type="text" name="name" required="required">
+                </div>
+                <div class="field">
+                    <label for="name">Imagem da coletora</label>
+                    <input type="url" name="image" required="required"  placeholder = "Ex: http://">
+                </div>
+                </div>
+
+                
+              
+
+                <div class="field-group">
+                    <div class="field" required="required">
+                        <label for="address">Endereço</label>
+                        <input type="text" name="address" required="required">
+                    </div>
+                    <div class="field">
+                        <label for="number">Número</label>
+                        <input type="text" name="number" required="required">
+                    </div>
+                </div>
+
+                <div class="field-group2">
+                    <div class="field">
+                        <label for="state">Estado</label>
+                        <select name="uf" id="">
+                            <option value="" required="required">Selecione o estado</option>
+                        </select>
+                        <input type="hidden" name='state'>
+                    </div>
+                    <div class="field">
+                        <label for="city">Cidade</label>
+                        <select name="city" id="" disabled="disabled" required="required">
+                            <option value="">Selecione a cidade</option>
+                        </select>
+                    </div>
+                </div>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>
+                    <h2>Itens de coleta</h2>
+                    <span>Selecione um ou mais itens abaixo</span>
+                </legend>
+
+                <div class="items-grid">
+                    <li data-id="1">
+                        <img src="/images/battery.png" alt="Pilhas e bateiras" width="50px" height="50px">
+                        <span>Pilhas e baterias</span>
+                    </li>
+                    <li data-id="2">
+                        <img src="/images/computer.png" alt="Computadores e notebooks" width="50px" height="50px">
+                        <span>Computadores e notebooks</span>
+                    </li>
+                    <li idata-idd="3">
+                        <img src="/images/mobile.png" alt="Celulares e tablets" width="50px" height="50px">
+                        <span>Celulares e tablets</span>
+                    </li>
+                    <li data-id="4">
+                        <img src="/images/keyboard.png" alt="Periféricos" width="50px" height="50px">
+                        <span>Periféricos</span>
+                    </li>
+                    <li data-id="5">
+                        <img src="/images/cable.png" alt="Cabos" width="50px" height="50px">
+                        <span>Cabos</span>
+                    </li>
+                    <li data-id="6">
+                        <img src="/images/antena.png" alt="Outros" width="50px" height="50px">
+                        <span>Outros</span>
+                    </li>
+                </div>
+                <input type="hidden" name="items">
+            </fieldset>
+            <button type="submit">Cadastrar ponto</button>
+        </form>
+    </div>
+
+        {% if  saved %}
+         {%include "partials/cadastro-ponto.html"%}
+        {% endif %}
+   
+{% endblock content %}
+
+{% block scripts %}
+<script src="scripts/cadastro-ponto.js"></script>
+{% endblock scripts %}
+
+
+</body>
+</html>

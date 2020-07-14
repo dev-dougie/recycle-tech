@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% set pageId = "page-home" %}
+
+<title>Home</title>
+{% block styles %}
+       <link href='styles/home.css' rel="stylesheet" type="text/css">
+       <link href='styles/modal.css' rel="stylesheet" type="text/css">
+{% endblock styles %}
+
+{% block content %}
+       <div class='content'>
+
+              <header>
+                     <h1>Recycle
+                            <img src='/images/logo.png' height="50px" width="50px" alt="logo marca">
+                            Tech</h1>
+                     <a class="ponto_des" href="/cadastro-ponto"><img src='/images/enter.png' height="20px" width="20px" alt="logo marca">
+                            Cadastre um ponto de descarte</a>
+              </header>
+
+              <main>
+                     <h1>{{title}}</h1>
+                     <p>Ajudando você a encontrar o melhor lugar
+                            <br>para seu resíduo eletrônico</p>
+                     <a href="#"><img src="/images/search.png" width="40" height="40">
+                            <strong>Pesquisar ponto de coleta</strong>
+                     </a>
+              </main>
+       </div>
+{% endblock content %}
+
+{% block modal %}
+       {% include "partials/modal.html" %}
+{% endblock modal %}
+
+{% block scripts %}
+       <script src="scripts/index.js"></script>
+{% endblock scripts %}

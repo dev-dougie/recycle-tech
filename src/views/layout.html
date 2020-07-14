@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% block title %}
+            <title>Recycle Tech</title>
+        {% endblock title %}
+
+        <link href="https://fonts.googleapis.com/css2?Roboto&Ubuntu:wght@300;700display=swap" rel="stylesheet">
+        <link href='styles/style.css' rel="stylesheet" type="text/css">
+
+        {% block styles %}
+        {% endblock styles %}
+        
+        <link href='styles/responsive.css' rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        
+        <div id="{{pageId}}">
+            {% block content %}{% endblock content %}
+        </div>
+
+        {% block modal %}{% endblock modal %}
+
+        {% block scripts %}{% endblock scripts %}
+
+    </body>
+</html>

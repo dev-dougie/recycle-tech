@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+{% set pageId = "search-results" %}
+
+{% block title %}
+    <title>Resultado de pesquisa</title>
+{% endblock title %}
+
+{% block styles %}
+    <link href='styles/search-results.css' rel="stylesheet" type="text/css">
+{% endblock styles %}
+
+<div id="">
+    {% block content %}
+
+        <header style="margin-top:20px; display:flex; align-items: center; justify-content: space-between; margin-left: 50px; margin-right: 50px; margin-bottom:0px;">
+            <h1>Recycle
+                <img src='/images/logo.png' height="50px" width="50px" alt="logo marca">
+                Tech</h1>
+            <a class="ponto_des" href="/"><img src='/images/home.png' height="20px" width="30px" alt="logo marca">Voltar para home</a>
+        </header>
+
+        <main>
+
+            {% if total > 0 %}
+                <h3>
+                    <strong>{{total}}
+                        pontos</strong>
+                    encontrados</h3>
+
+                <div class="cards">
+
+                    {% for local in locais %}
+                        <div class="card">
+                            <img src="{{local.img_coletora}}" alt="{{local.nm_coletora}}">
+                            <h1>{{local.nm_coletora}}</h1>
+                            <h3>{{local.itens_coleta}}</h3>
+                            <p>{{local.end_coletora}},
+                                {{local.nr_end}}</p>
+                            <br>
+                            <p>{{local.cidade_coletora}},
+                                {{local.est_coletora}}</p>
+                        </div>
+                    {% endfor %}
+                </div>
+
+                  {%else%}
+                  <h3 ><strong>Nenhum</strong>local encontrados</h3>
+                {% endif %}
+            </main>
+          
+        
+
+    {% endblock content %}
+</div>
+
+{% block scripts %}
+    <script src="scripts/cadastro-ponto.js"></script>
+{% endblock scripts %}
